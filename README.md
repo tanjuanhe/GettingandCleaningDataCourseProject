@@ -18,7 +18,7 @@ deviation variables for each subject and activity.
 
 This script uses the "data.table" package.
 
-The script should be with the working directory set to be the folder containing 
+The script should be run with the working directory set to be the folder containing 
 the UCI HAR dataset's "README", "activity_labels", "features", and "features_info"
 files, as well as the "test" and "train" folders i.e. the "UCI HAR Dataset"
 folder that can be downlowded from [here](http://archive.ics.uci.edu/ml/machine-learning-databases/00240/) 
