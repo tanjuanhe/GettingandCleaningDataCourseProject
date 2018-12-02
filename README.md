@@ -32,13 +32,8 @@ The script run_analysis.R has five parts:
 1. **Creates one data frame each for the training and test sets.**
 This part of the script:
     * Extracts the measurement data for the test set from the "test" folder
-    ("test/X_test.txt").
-    * Cleans the data by:
-        + Splitting individual data entries using a single space as a separator;
-        + Removing empty entries that result from the splitting;
-        + Converting the data into numeric data;
-        + Reshaping the data into a data frame with 561 columns, one for each 
-        measurement feature.
+    ("test/X_test.txt"), and labels it with the names of the measurements from
+    the "features" file in the UCI HAR Dataset.
     * Extracts the subject ("test/subject_test.txt") and activity
     ("test/y_test.txt") data for the test set from the "test" folder.
     * Merges the subject, activity, and measurement data for the test set into a

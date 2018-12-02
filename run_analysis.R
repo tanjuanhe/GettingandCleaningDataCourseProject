@@ -21,13 +21,8 @@ library(data.table)
 ## Step 1: We match the subject, activity and measurement data for the test and
 ## training sets.
 
-## First, we extract and clean the measurement data for the test set.
-test_data <- readLines("test/X_test.txt") ## Extracts raw data
-test_data <- strsplit(test_data, " ") ## Splits data using space as separator
-test_data <- lapply(test_data, function(x) x[!x==""]) ## Removes empty entries
-test_data <- as.numeric(unlist(test_data)) ## Converts into numeric vector
-test_data <- matrix(test_data, ncol=561, byrow=TRUE) ## Converts into matrix
-test_data <- as.data.frame(test_data) ## Converts into data frame
+## First, we extract and label the measurement data for the test set.
+test_data <- read.table("test/X_test.txt") ## Extracts measurement data
 features <- readLines("features.txt") ## Extracts names of features
 colnames(test_data) <- features ## Labels measurements with names of features
 
@@ -39,12 +34,7 @@ test_dataset <- cbind("subject" = test_subject, "activity" = test_activity,
 ## Matches subject, activity, and measurement data into one data frame
 
 ## Finally, we repeat this for the training set.
-train_data <- readLines("train/X_train.txt") ## Extracts raw data
-train_data <- strsplit(train_data, " ") ## Splits data using space as separator
-train_data <- lapply(train_data, function(x) x[!x==""]) ## Removes empty entries
-train_data <- as.numeric(unlist(train_data)) ## Converts into numeric vector
-train_data <- matrix(train_data, ncol=561, byrow=TRUE) ## Converts into matrix
-train_data <- as.data.frame(train_data) ## Converts into data frame
+train_data <- read.table("train/X_train.txt") ## Extracts measurement data
 colnames(train_data) <- features ## Labels measurements with names of features
 
 train_subject <- readLines("train/subject_train.txt") ## Extracts subject
